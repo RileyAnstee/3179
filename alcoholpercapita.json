@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Litres of pure alcohol per person per year",
+    "title": "Litres of pure alcohol per person per year (2010 Data)",
     "width": 800,
     "height": 400,
     "projection": {"type": "equalEarth"},
