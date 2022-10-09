@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "Distribution of wines reviewed",
+    "data": {
+        "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/winedata1.csv"
+    },
+    "params": [
+        {
+            "name": "PriceNum",
+            "value": 10,
+            "bind": {
+                "input": "range",
+                "min": 10,
+                "max": 100,
+                "step": 10,
+                "name": "Maximum Price:"
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.price < PriceNum"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "bar"
+            },
+            "encoding": {
+                "x": {
+                    "field": "points",
+                    "type": "quantitative",
+                    "title": "Points Scored"
+                },
+                "y": {
+                    "aggregate": "count",
+                    "field": "points",
+                    "title": "Number of wines"
+                },
+                "color": {
+                    "field": "continent",
+                    "legend": {
+                        "title": "Continent"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "continent",
+                        "type": "nominal",
+                        "title": "Continent"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "top",
+                "dx": 350,
+                "dy": -220,
+                "text": [
+                    "Bottles above $100 not shown, but some go for up to 500!"
+                ]
+            }
+        }
+    ]
+}
