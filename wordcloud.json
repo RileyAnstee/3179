@@ -1,0 +1,97 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 1200,
+    "height": 400,
+    "padding": 0,
+    "title": "Word cloud of most common words used in wine reviews",
+    "data": [
+        {
+            "name": "reviewdata",
+            "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/reviewdata.csv",
+            "transform": [
+                {
+                    "type": "countpattern",
+                    "field": "data",
+                    "case": "lower",
+                    "pattern": "[\\w']{3,}",
+                    "stopwords": "(i|me|my|myself|we|us|our|ours|ourselves|you|your|yours|yourself|sex|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall|2022|2011|110|'09|'01|116|000|325|153|172|500|04'|122|III|111|400|130|150|255|ass|'04|'01|kept|it'll|2027|2026|2009|2015|550|2021|2032|137|'11|2020|'05|102|103|550|137|2018|lee|yet|2024|ill|it'|850|'07|2006|227|140|389|2012|2019|108|2016|'08|227|125|'10|187|1772|'06|108|177|420|777|'08|600|187|275|2019|1705|'10|559|126|185|2007|2005|132|2002|170|100|180|101|120|200|132|2035|185|123|2031|280|2033|424|422|25g|147|210|422|114|244|2017|161|2025|123|380|1873|115|190|650|370|165|190|115|'03|375|1922|'99|1492|eli|rac|rtz|oft|nez|ift|2014|2010|2013|ceo|tes|i's|irf|cal|ali|sur|ros|de'|ber|452|2030|2023|1901|999|336|2008|t's|731|fer|rit|s's|ttb|'les|ners)"
+                },
+                {
+                    "type": "formula",
+                    "as": "angle",
+                    "expr": "[-90,0,90][~~(random() * 3)]"
+                },
+                {
+                    "type": "formula",
+                    "as": "weight",
+                    "expr": "if(datum.text=='wine', 800, 400)"
+                }
+            ]
+        }
+    ],
+    "scales": [
+        {
+            "name": "color",
+            "type": "ordinal",
+            "domain": {
+                "data": "reviewdata",
+                "field": "text"
+            },
+            "range": [
+                "#69369E",
+                "#7951A8",
+                "#939597",
+                "#656565"
+            ]
+        }
+    ],
+    "marks": [
+        {
+            "type": "text",
+            "from": {
+                "data": "reviewdata"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "text"
+                    },
+                    "align": {
+                        "value": "center"
+                    },
+                    "fill": {
+                        "scale": "color",
+                        "field": "text"
+                    }
+                }
+            },
+            "transform": [
+                {
+                    "type": "wordcloud",
+                    "size": [
+                        1200,
+                        400
+                    ],
+                    "text": {
+                        "field": "text"
+                    },
+                    "rotate": {
+                        "field": "datum.angle"
+                    },
+                    "font": "Helvetica",
+                    "fontSize": {
+                        "field": "datum.count"
+                    },
+                    "fontWeight": {
+                        "field": "datum.weight"
+                    },
+                    "fontSizeRange": [
+                        12,
+                        72
+                    ],
+                    "padding": 2
+                }
+            ]
+        }
+    ]
+}

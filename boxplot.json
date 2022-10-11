@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/qualitydata.csv"},
+    "title": "Alcohol Percentage vs Wine Quality",
+    "width": 45,
+    "height": 400,
+    "mark": {
+      "type": "boxplot",
+      "extent": "min-max"
+    },
+    "encoding": {
+      "column": {"field": "quality","type": "ordinal","title": null},
+      "y": {
+        "field": "alcohol",
+        "type": "quantitative",
+        "title": "% Alcohol",
+        "scale": {"domain": [9,13]}
+      },
+      "x": {
+        "field": "type",
+        "type": "nominal",
+        "title": ""
+      },
+      "color": {
+        "field": "type",
+        "type": "nominal",
+          "scale": {
+          "range": ["#86242a", "#d3d3d3"]  
+    },
+     "legend": {"labelExpr": "{'red': 'Red', 'white': 'White'}[datum.label]",   "title":"Type"}
+      }
+    }
+  }

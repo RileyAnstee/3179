@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/winesproduced.csv"
+  },
+  "title":"Number of bottles produced",
+  "width": 400,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Number of reviewed wines produced"
+    },
+    "y": {
+        "field": "countrycount",
+        "type": "nominal",
+        "sort": {"field": "score", "op": "average", "order":"descending"},
+        "title": "Country"
+    },
+        "tooltip":{"field":"count","type":"quantitative","title":"Number of wines"},
+        "color": {"value":"#B589D6"}
+  }
+}
+

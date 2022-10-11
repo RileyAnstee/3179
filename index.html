@@ -1,38 +1,158 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
-    <!-- Import pure.css -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
+    integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="style.css" media="all">
-  
 </head>
+
 <body>
-  
-<div id="map"></div>
-<script type="text/javascript">
-  var spec2 = "alcoholpercapita.json";
-  vegaEmbed('#map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-2-4">
+      <h1>All about wine</h1>
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
 
-<div id="hist"></div>
-<script type="text/javascript">
-  var spec3 = "winepointdist.json";
-  vegaEmbed('#hist', spec3).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-3-4">
+      <div id="map">
+        <script type="text/javascript">
+          var spec2 = "alcoholpercapita.json";
+          vegaEmbed('#map', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-4">
+      <div id="barchart">
+        <script type="text/javascript">
+          var spec2 = "barchart.json";
+          vegaEmbed('#barchart', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+    <div class="pure-u-1-4">
+      <div id="text_div">
+        <h2>Heading </h2>
+        <p>GENERAL WINE INDUSTRY STATISTICS
+          There were 24.85 billion liters of wine sold worldwide in 2020.
+          This was lower than the 27.47 billion liters sold in 2019, but the volume sold is expected to increase to
+          26.59 billion liters in 2022 and continue to increase.
+          The average wine consumption per U.S. resident in 2020 was 3.09 gallons.
+          The U.S. consumed enough wine in 2020 for every resident to drink over three gallons.
+          This number was up from 2019, when the average wine consumption per resident was 2.91 gallons. The overall
+          average wine consumption per resident had increased by 33% from 2005, when it was at 2.33 gallons per
+          resident.
+          The COVID-19 pandemic lockdowns likely fueled the increase in wine consumption in 2020.
+          Worldwide wine consumption in 2020 was about 234 million hectoliters.
+          This is lower than the 2019 number of 241 million hectoliters. (There are 100 liters in a hectoliter.) The
+          U.S. is the largest consumer of wine, drinking 33 million hectoliters in 2020, but France is close behind,
+          consuming 24.7 million hectoliters that same year.</p>
+      </div>
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
 
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-3-4">
+      <div id="wordcloud">
+        <script type="text/javascript">
+          var spec2 = "wordcloud.json";
+          vegaEmbed('#wordcloud', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-4">
+      <div id="text_div">
+        <h2>Heading </h2>
+        <p>GENERAL WINE INDUSTRY STATISTICS
+          There were 24.85 billion liters                       of wine sold worldwide in 2020.
+          This was lower than the 27.47 billion liters sold in 2019, but the volume sold is expected to increase to
+          26.59 billion liters in 2022 and continue to increase.
+          The average wine consumption per U.S. resident in 2020 was 3.09 gallons.
+          The U.S. consumed enough wine in 2020 for every resident to drink over three gallons.
+          This number was up from 2019, when the average wine consumption per resident was 2.91 gallons. The overall
+          average wine consumption per resident had increased by 33% from 2005, when it was at 2.33 gallons per
+          resident.
+          The COVID-19 pandemic lockdowns likely fueled the increase in wine consumption in 2020.
+          Worldwide wine consumption in 2020 was about 234 million hectoliters.
+          This is lower than the 2019 number of 241 million hectoliters. (There are 100 liters in a hectoliter.) The
+          U.S. is the largest consumer of wine, drinking 33 million hectoliters in 2020, but France is close behind,
+          consuming 24.7 million hectoliters that same year.</p>
+      </div>
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-4">
+      <div id="histogram">
+        <script type="text/javascript">
+          var spec2 = "histogram.json";
+          vegaEmbed('#histogram', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+    <div class="pure-u-1-4">
+      <div id="boxplot">
+        <script type="text/javascript">
+          var spec2 = "boxplot.json";
+          vegaEmbed('#boxplot', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
+
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-3-4">
+      <div id="parallel">
+        <script type="text/javascript">
+          var spec2 = "parallel.json";
+          vegaEmbed('#parallel', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g padding">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-2-4">
+        <p>T</p>
+    </div>
+  </div>
 </body>
 </html>
