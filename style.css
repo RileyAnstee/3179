@@ -1,18 +1,14 @@
-#map {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 10px;
-	/*height: 1000px;
-	width: 800px;*/
+h1 {
+	text-align:center;
+	color:purple;
+	font-size: 40px;
 }
 
+p {
+	color:black;
+	font-size: 16px;
+}
 
-#hist {
-	top: 100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	height: 1000px;
-	width: 800px;
+.padding {
+	margin-bottom: 2cm;
 }
