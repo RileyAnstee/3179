@@ -1,25 +1,30 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/qualitydata.csv"},
-    "title": "Alcohol Percentage vs Wine Quality",
-    "width": 45,
-    "height": 400,
+    "title" : {"text": "              Alcohol Percentage vs Wine Quality",
+    "fontSize" : 50
+  },
+    "width": 160,
+    "height": 825,
     "mark": {
       "type": "boxplot",
       "extent": "min-max"
     },
     "encoding": {
-      "column": {"field": "quality","type": "ordinal","title": null},
+      "column": {"field": "quality","type": "ordinal","title": "Rating", "titleFontSize": 40} ,
       "y": {
         "field": "alcohol",
         "type": "quantitative",
         "title": "% Alcohol",
-        "scale": {"domain": [9,13]}
+        "scale": {"domain": [9,13]},
+        "axis" : {"labelFontSize":30, "titleFontSize":40},
+        "size" : 50
       },
       "x": {
         "field": "type",
         "type": "nominal",
-        "title": ""
+        "title": "",
+        "axis" : {"labelFontSize":30, "titleFontSize":40}
       },
       "color": {
         "field": "type",
@@ -27,7 +32,18 @@
           "scale": {
           "range": ["#86242a", "#d3d3d3"]  
     },
-     "legend": {"labelExpr": "{'red': 'Red', 'white': 'White'}[datum.label]",   "title":"Type"}
+     "legend": {"labelExpr": "{'red': 'Red', 'white': 'White'}[datum.label]",   "title":"Type",                        "titleFontSize" : 40,  
+     "labelFontSize" : 30}
       }
-    }
+    },
+    "config": {
+      "style": {
+        "guide-label": {
+              "fontSize": 30
+        },
+        "guide-title": {
+          "fontSize": 40
   }
+      }
+  }
+}

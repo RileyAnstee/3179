@@ -1,13 +1,15 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "width": 1200,
-    "height": 400,
+    "width": 3300,
+    "height": 1750,
     "padding": 0,
-    "title": "Word cloud of most common words used in wine reviews",
+    "title" : {"text": "Most Common Words used in Wine Reviews",
+    "fontSize" : 50
+  },
     "data": [
         {
             "name": "reviewdata",
-            "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/reviewdata.csv",
+            "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/reviewdatareducederer.csv",
             "transform": [
                 {
                     "type": "countpattern",
@@ -38,10 +40,10 @@
                 "field": "text"
             },
             "range": [
-                "#69369E",
+                "#656565",
                 "#7951A8",
                 "#939597",
-                "#656565"
+                "#69369E"              
             ]
         }
     ],
@@ -56,6 +58,7 @@
                     "text": {
                         "field": "text"
                     },
+                    "tooltip": {"signal": "{'Number of times mentioned': datum.count}"},
                     "align": {
                         "value": "center"
                     },
@@ -69,8 +72,8 @@
                 {
                     "type": "wordcloud",
                     "size": [
-                        1200,
-                        400
+                        3300,
+                        1750
                     ],
                     "text": {
                         "field": "text"
@@ -78,7 +81,7 @@
                     "rotate": {
                         "field": "datum.angle"
                     },
-                    "font": "Helvetica",
+                    "font": "Arial",
                     "fontSize": {
                         "field": "datum.count"
                     },
@@ -86,8 +89,8 @@
                         "field": "datum.weight"
                     },
                     "fontSizeRange": [
-                        12,
-                        72
+                        75,
+                        200
                     ],
                     "padding": 2
                 }

@@ -1,8 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Distribution of wines reviewed",
-    "width": 400,
-    "height": 400,
+    "title" : {"text": "Distribution of Review Points",
+    "fontSize" : 50
+  },
+    "width": 1500,
+    "height": 900,
     "data": {
         "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/winedata1.csv"
     },
@@ -29,21 +31,40 @@
             "mark": {
                 "type": "bar"
             },
+            
             "encoding": {
                 "x": {
                     "field": "points",
                     "type": "quantitative",
-                    "title": "Points Scored"
+                    "title": "Points Scored",
+                    "axis" : {"labelFontSize":30, "titleFontSize":40},
+                    "bin" : true
                 },
                 "y": {
                     "aggregate": "count",
                     "field": "points",
-                    "title": "Number of wines"
+                    "title": "Number of wines",
+                    "axis" : {"labelFontSize":30, "titleFontSize":40}
                 },
                 "color": {
                     "field": "continent",
                     "legend": {
-                        "title": "Continent"
+                        "title": "Continent",
+                        "titleFontSize" : 40,       
+                        "labelFontSize" : 30,
+                        "labelLimit": 500,
+                        "titleLimit": 500
+
+                    },
+                    "scale": {
+                        "range": [
+                            "#957c64",
+                            "#8c6d6d",
+                            "#8d9465",
+                            "#816099",
+                            "#c1e415",
+                            "#301934"
+                        ]
                     }
                 },
                 "tooltip": [
@@ -54,17 +75,21 @@
                     }
                 ]
             }
+            
         },
+        
         {
             "mark": {
                 "type": "text",
                 "align": "right",
                 "baseline": "top",
-                "dx": 200,
-                "dy": -100,
+                "dx": 600,
+                "dy": -300,
                 "text": [
                     "Bottles above $100 not shown", "but some go for up to $500!"
-                ]
+                ],
+                "fontSize": 40,
+                "fontWeight" : 1
             }
         }
     ]

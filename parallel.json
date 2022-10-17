@@ -3,9 +3,11 @@
     "data": {
         "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/winequality.json"
     },
-    "width": 1200,
-    "height": 400,
-    "title":"Parallel line plot of attributes which contribute to wine quality",
+    "width": 3000,
+    "height": 1025,
+    "title" : {"text": "Wine Attribute Correlation",
+    "fontSize" : 50
+},  
     "transform": [
         {
             "filter": "datum['pH']"
@@ -139,7 +141,8 @@
                 {
                     "mark": {
                         "type": "text",
-                        "style": "label"
+                        "style": "label",
+                        "fontSize":  30
                     },
                     "encoding": {
                         "text": {
@@ -165,14 +168,15 @@
                     "field": "key"
                 },
                 "y": {
-                    "value": 150
+                    "value": 512
                 }
             },
             "layer": [
                 {
                     "mark": {
                         "type": "text",
-                        "style": "label"
+                        "style": "label",
+                        "fontSize":  30
                     },
                     "encoding": {
                         "text": {
@@ -198,14 +202,15 @@
                     "field": "key"
                 },
                 "y": {
-                    "value": 300
+                    "value": 1025
                 }
             },
             "layer": [
                 {
                     "mark": {
                         "type": "text",
-                        "style": "label"
+                        "style": "label",
+                        "fontSize":  30
                     },
                     "encoding": {
                         "text": {
@@ -230,8 +235,11 @@
             "domain": false,
             "labelAngle": 0,
             "tickColor": "#ccc",
-            "title": null
+            "title": null,
+            "labelFontSize": 30,
+            "labelLimit" : 500
         },
+
         "view": {
             "stroke": null
         },

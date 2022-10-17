@@ -1,14 +1,52 @@
+
+
 h1 {
 	text-align:center;
-	color:purple;
-	font-size: 40px;
+	color:	#2D215A;
+	font-size: 200px;
+	word-spacing: 150%;
+	padding: 0px; 
+	font-family: "Brush Script MT", cursive;
+	
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size:80px
 }
 
 p {
 	color:black;
-	font-size: 16px;
+	font-size: 45px;
 }
 
+ul {
+	color:black;
+	font-size: 50px;
+}
 .padding {
 	margin-bottom: 2cm;
+}
+
+.centered{
+	width: 3600px; 
+	margin: 0 auto; 
+	padding: 20px;
+	background-color: white;
+}
+
+.textcentered{
+	text-align: center;
+}
+.background{
+	background-image: url(https://raw.githubusercontent.com/RileyAnstee/3179/main/jaime-casap-tjkNAG4rYz0-unsplash.jpg);
+	height: 100%;
+	width: 100%;
+	background-attachment:fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }

@@ -2,24 +2,46 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/winesproduced.csv"
   },
-  "title":"Number of bottles produced",
-  "width": 400,
-  "height": 400,
+  "title" : {"text": "Number of bottles produced",
+  "fontSize" : 50
+},
+  "width": 1500,
+  "height": 1200,
+  "layer": [
+    {
   "mark": "bar",
   "encoding": {
     "x": {
-        "field": "count",
+        "field": "numb",
         "type": "quantitative",
-        "title": "Number of reviewed wines produced"
+        "title": "Number of reviewed wines produced per year",
+        "axis" : {"labelFontSize":30, "titleFontSize":40}
     },
     "y": {
         "field": "countrycount",
         "type": "nominal",
-        "sort": {"field": "score", "op": "average", "order":"descending"},
-        "title": "Country"
+        "sort": {"field": "blank","order":"descending"},
+        "title": "Country",
+        "axis" : {"labelFontSize":30, "titleFontSize":40}
     },
-        "tooltip":{"field":"count","type":"quantitative","title":"Number of wines"},
-        "color": {"value":"#B589D6"}
+        "color": {"value":"#B589D6"},
+        "tooltip": [{"field":"numb", "type":"quantitative", "format":",","title":"Number of wines"}]
   }
+},
+{
+  "mark": {
+      "type": "text",
+      "align": "right",
+      "baseline": "top",
+      "dx": 700,
+      "dy": -400,
+      "text": [
+          "The US produces 84 over 25000 ", "reviewed bottles of wine but drinks", "far less per person than other top producers"
+      ],
+      "fontSize": 40,
+      "fontWeight" : 2
+  }
+}
+]
 }
 

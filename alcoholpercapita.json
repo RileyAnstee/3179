@@ -1,11 +1,58 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Servings of wine per person per year",
-    "width": 1100,
-    "height": 400,
-    "projection": {
-        "type": "equalEarth"
+    "width": 3250,
+    "height": 1375,
+    "title": {
+        "text": "Servings of wine per person per year (2010)",
+        "fontSize": 50
     },
+    "projection": {
+        "type": "equalEarth",
+        "center": {
+            "expr": "center"
+        },
+        "scale": {
+            "expr": "zoom"
+        }
+    },
+    "params": [
+        {
+            "name": "zoom",
+            "value": 500,
+            "bind": {
+                "input": "range",
+                "min": 500,
+                "max": 2000,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center",
+            "value": [
+                0,
+                0
+            ],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        10,
+                        50
+                    ]
+                ],
+                "labels": [
+                    "World",
+                    "Europe"
+                ],
+                "name": "Zoom Center: "
+            }
+        }
+    ],
     "layer": [
         {
             "data": {
@@ -22,7 +69,6 @@
         },
         {
             "data": {
-                "name": "a",
                 "url": "https://raw.githubusercontent.com/RileyAnstee/3179/main/map1.json",
                 "format": {
                     "type": "topojson",
@@ -88,6 +134,17 @@
                             "#552586",
                             "#2D215A"
                         ]
+                    },
+                    "legend": {
+                        "titleAlign": "right",
+                        "titleLimit": 800,
+                        "orient": "none",
+                        "legendX": 2600,
+                        "legendY": 10,
+                        "titleFontSize": 40,
+                        "labelFontSize": 30,
+                        "gradientLength": 500,
+                        "gradientThickness": 50
                     }
                 },
                 "tooltip": [

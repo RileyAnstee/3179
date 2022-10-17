@@ -18,18 +18,13 @@
 </head>
 
 <body>
-  <div class="pure-g">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-2-4">
-      <h1>All about wine</h1>
-    </div>
-    <div class="pure-u-1-4"></div>
-  </div>
-
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-3-4">
-      <div id="map">
+  <div class="background">
+    <div class="centered">
+      <h1>Wonderful Wine</h1> 
+      <p class = "textcentered"> A Data Visualisation for FIT3179 by Riley Anstee</p>
+      <hr>
+      <h3>Wine Around the World</h3>
+      <div id="map" style="margin-left: 175px; margin-top: 50px">
         <script type="text/javascript">
           var spec2 = "alcoholpercapita.json";
           vegaEmbed('#map', spec2).then(function (result) {
@@ -37,46 +32,38 @@
           }).catch(console.error);
         </script>
       </div>
-    </div>
-  </div>
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-4">
-      <div id="barchart">
-        <script type="text/javascript">
-          var spec2 = "barchart.json";
-          vegaEmbed('#barchart', spec2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-          }).catch(console.error);
-        </script>
-      </div>
-    </div>
-    <div class="pure-u-1-4">
-      <div id="text_div">
-        <h2>Heading </h2>
-        <p>GENERAL WINE INDUSTRY STATISTICS
-          There were 24.85 billion liters of wine sold worldwide in 2020.
-          This was lower than the 27.47 billion liters sold in 2019, but the volume sold is expected to increase to
-          26.59 billion liters in 2022 and continue to increase.
-          The average wine consumption per U.S. resident in 2020 was 3.09 gallons.
-          The U.S. consumed enough wine in 2020 for every resident to drink over three gallons.
-          This number was up from 2019, when the average wine consumption per resident was 2.91 gallons. The overall
-          average wine consumption per resident had increased by 33% from 2005, when it was at 2.33 gallons per
-          resident.
-          The COVID-19 pandemic lockdowns likely fueled the increase in wine consumption in 2020.
-          Worldwide wine consumption in 2020 was about 234 million hectoliters.
-          This is lower than the 2019 number of 241 million hectoliters. (There are 100 liters in a hectoliter.) The
-          U.S. is the largest consumer of wine, drinking 33 million hectoliters in 2020, but France is close behind,
-          consuming 24.7 million hectoliters that same year.</p>
-      </div>
-    </div>
-    <div class="pure-u-1-4"></div>
-  </div>
 
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-3-4">
-      <div id="wordcloud">
+          <div id="barchart" style = "margin-left: 0px; margin-top: 50px";>
+            <script type="text/javascript">
+              var spec2 = "barchart.json";
+              vegaEmbed('#barchart', spec2).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+              }).catch(console.error);
+            </script>
+          </div>
+
+        <div class="pure-u-1-2">
+          <div id="text_div" style="margin-left: 350px; margin-right: 125px; margin-top: 50px;">
+            <h2>Some Wine Consumption Trends:</h2>
+            <ul>
+              <li>There were <strong> 24.85 billion liters</strong> of wine sold worldwide in 2020. This was lower than the 27.47 billion liters sold in 2019, but the volume sold is expected to increase to
+                26.59 billion liters in 2022 and continue to increase.</li>
+                <br>
+              <li>The average wine consumption per U.S. resident in 2020 was <strong>3.09 gallons</strong>.
+                The U.S. consumed enough wine in 2020 for every resident to drink over three gallons. 
+                This number was up from 2019, when the average wine consumption per resident was 2.91 gallons.</li>
+                <br>
+              <li>The COVID-19 pandemic lockdowns likely fueled the increase in wine consumption in 2020.
+                Worldwide wine consumption in 2020 was about 234 million hectoliters.
+                This is lower than the 2019 number of 241 million hectoliters. The
+                U.S. is the largest consumer of wine, drinking <strong>33 million hectoliters </strong> in 2020, but France is close behind,
+                consuming 24.7 million hectoliters that same year, despite their much lower population.</li>
+              </ul>
+        </div>
+      </div>
+      <hr>
+      <h3>Wine Reviews and Quality</h3>
+      <div id="wordcloud" style="margin-left: 125px; margin-top: 50px">
         <script type="text/javascript">
           var spec2 = "wordcloud.json";
           vegaEmbed('#wordcloud', spec2).then(function (result) {
@@ -84,36 +71,13 @@
           }).catch(console.error);
         </script>
       </div>
-    </div>
-    <div class="pure-u-1-4"></div>
-  </div>
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-4">
-      <div id="text_div">
-        <h2>Heading </h2>
-        <p>GENERAL WINE INDUSTRY STATISTICS
-          There were 24.85 billion liters                       of wine sold worldwide in 2020.
-          This was lower than the 27.47 billion liters sold in 2019, but the volume sold is expected to increase to
-          26.59 billion liters in 2022 and continue to increase.
-          The average wine consumption per U.S. resident in 2020 was 3.09 gallons.
-          The U.S. consumed enough wine in 2020 for every resident to drink over three gallons.
-          This number was up from 2019, when the average wine consumption per resident was 2.91 gallons. The overall
-          average wine consumption per resident had increased by 33% from 2005, when it was at 2.33 gallons per
-          resident.
-          The COVID-19 pandemic lockdowns likely fueled the increase in wine consumption in 2020.
-          Worldwide wine consumption in 2020 was about 234 million hectoliters.
-          This is lower than the 2019 number of 241 million hectoliters. (There are 100 liters in a hectoliter.) The
-          U.S. is the largest consumer of wine, drinking 33 million hectoliters in 2020, but France is close behind,
-          consuming 24.7 million hectoliters that same year.</p>
+
+      <div id="text_div" style = "margin-left: 150px; margin-right: 150px">
+
       </div>
-    </div>
-    <div class="pure-u-1-4"></div>
-  </div>
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-4">
-      <div id="histogram">
+
+      <div class="pure-u-1-2">
+      <div id="histogram" style="margin-left: 60px;">
         <script type="text/javascript">
           var spec2 = "histogram.json";
           vegaEmbed('#histogram', spec2).then(function (result) {
@@ -121,9 +85,9 @@
           }).catch(console.error);
         </script>
       </div>
-    </div>
-    <div class="pure-u-1-4">
-      <div id="boxplot">
+      </div>
+
+      <div id="boxplot" style="margin-left: 200px">
         <script type="text/javascript">
           var spec2 = "boxplot.json";
           vegaEmbed('#boxplot', spec2).then(function (result) {
@@ -131,13 +95,10 @@
           }).catch(console.error);
         </script>
       </div>
-    </div>
-    <div class="pure-u-1-4"></div>
-  </div>
-
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-3-4">
+      <p style="text-align: right; margin-right: 200px">No data for red wine rated at 9 points. Rating given out of 10</p>
+      <hr>
+      <h3>What makes up a wine?</h3>
+      <img src = "https://raw.githubusercontent.com/RileyAnstee/3179/main/98-984823_wine-bottle-png.png" style="margin-left: 125px">
       <div id="parallel">
         <script type="text/javascript">
           var spec2 = "parallel.json";
@@ -146,13 +107,9 @@
           }).catch(console.error);
         </script>
       </div>
-    </div>
-  </div>
-  <div class="pure-g padding">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-3-4">
-        <p>Text 3</p>
+      
     </div>
   </div>
 </body>
+
 </html>
